@@ -19,6 +19,9 @@ class PostsController < ApplicationController
       # 他のURLに転送（リダイレクト）するには、redirect_toメソッドを用いま
       redirect_to show_path(@post.id)
     else  
+      p "================="
+      p @post.errors.full_messages
+      p "================="
       render :new
     end
   end

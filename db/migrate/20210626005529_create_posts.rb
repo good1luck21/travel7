@@ -4,8 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :traveled
       t.datetime :travel_day
-      t.string :travel_coment
-      t.string :other_coment
+      t.string :content
       t.integer :user_id
       t.timestamps
     end

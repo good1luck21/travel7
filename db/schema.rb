@@ -10,15 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_26_005529) do
+ActiveRecord::Schema.define(version: 2021_07_01_014625) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "post_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "user_id"
     t.string "title"
     t.string "traveled"
     t.datetime "travel_day"
-    t.string "travel_coment"
-    t.string "other_coment"
+    t.string "content"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,4 +43,3 @@ ActiveRecord::Schema.define(version: 2021_06_26_005529) do
   end
 
 end
-# datetime →  2000/1/20
